@@ -27,10 +27,10 @@ const App: React.FC<LoginProps> = () => {
         <form>
           <div className="mb-3">
             <label htmlFor="username" className="form-label">
-              Username
+              Email
             </label>
             <input
-              type="text"
+              type="email"
               className="form-control"
               id="username"
               value={username}
