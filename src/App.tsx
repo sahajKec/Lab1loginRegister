@@ -5,11 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 interface LoginProps {}
 
 const App: React.FC<LoginProps> = () => {
-  const [username, setUsername] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
 
-  const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setUsername(e.target.value);
+  const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+    setEmail(e.target.value);
   };
 
   const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -32,9 +32,9 @@ const App: React.FC<LoginProps> = () => {
             <input
               type="email"
               className="form-control"
-              id="username"
-              value={username}
-              onChange={handleUsernameChange}
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
             />
           </div>
           <div className="mb-3">
