@@ -5,11 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 interface RegisterProps { }
 
 const Register: React.FC<RegisterProps> = () => {
-    const [username, setUsername] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
     const [password, setPassword] = useState<string>('');
 
-    const handleUsernameChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setUsername(e.target.value);
+    const handleEmailChange = (e: ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
     };
 
     const handlePasswordChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -27,14 +27,14 @@ const Register: React.FC<RegisterProps> = () => {
                 <form>
                     <div className="mb-3">
                         <label htmlFor="username" className="form-label">
-                            Username
+                            Email
                         </label>
                         <input
-                            type="text"
+                            type="email"
                             className="form-control"
-                            id="username"
-                            value={username}
-                            onChange={handleUsernameChange}
+                            id="email"
+                            value={email}
+                            onChange={handleEmailChange}
                         />
                     </div>
                     <div className="mb-3">
