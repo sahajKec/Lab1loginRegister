@@ -17,7 +17,7 @@ const App: React.FC<LoginProps> = () => {
   };
 
   const handleLogin = () => {
-    console.log('Logging in with:', { username, password });
+    console.log('Logging in with:', { email, password });
   };
 
   return (
