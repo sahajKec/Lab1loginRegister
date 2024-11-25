@@ -585,3 +585,186 @@ These classes are mapped to corresponding styles in your CSS file.
   line-height: 1.6;
   text-align: center;
 }
+
+lab 1
+<div className="container d-flex justify-content-center align-items-center vh-100">
+      <div className="card p-4">
+        <h3 className="card-title text-center mb-4">Login</h3>
+        <form>
+          <div className="mb-3">
+            <label htmlFor="username" className="form-label">
+              Email
+            </label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Password
+            </label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          <div className="text-center">
+            <button type="button" className="btn btn-primary" onClick={handleLogin}>
+              Login
+            </button>
+          </div>
+          <h3 className='d-flex justify-content-center align-items-center'><a href="/register">Register</a></h3>
+        </form>       
+      </div>
+    </div>
+
+
+    breakdown 
+    
+Structure wise Breakdown:
+
+1. Main div - Container
+
+<div className="container d-flex justify-content-center align-items-center vh-100">
+
+container: This is a Bootstrap class that provides a responsive container with fixed-width, which adapts to screen size.
+css alternative 
+/* File: App.css or your specific CSS file */
+/* Style for the container */
+.container {
+  max-width: 1200px; /* Set the maximum width of the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add padding inside the container */
+  background-color: #f8f9fa; /* Light background color */
+  border-radius: 8px; /* Optional: Add rounded corners to the container */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for a subtle card effect */
+  overflow: hidden; /* Prevent content overflow */
+}
+
+/* Media query for responsiveness - adjusting the container width on small screens */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px; /* Reduce padding on smaller screens */
+  }
+}
+
+d-flex: This is a Bootstrap utility class that applies the Flexbox layout to this div, allowing its child elements to be easily aligned and positioned.
+
+justify-content-center: This Flexbox utility horizontally centers the child elements.
+
+align-items-center: This Flexbox utility vertically centers the child elements.
+
+vh-100: This class sets the height of the container to be 100% of the viewport height. This ensures that the form is vertically centered in the entire screen.
+
+
+2. Card Wrapper for Form
+
+<div className="card p-4">
+
+card: A Bootstrap class that gives the div a card-like appearance, including a border, padding, and rounded corners.
+
+p-4: This Bootstrap utility adds padding to the card, ensuring the content inside has some space from the edges (4 units of padding).
+
+
+3. Login Title
+
+<h3 className="card-title text-center mb-4">Login</h3>
+
+card-title: A Bootstrap class that applies the default styling for card titles.
+
+text-center: Centers the text horizontally inside the h3 tag.
+
+mb-4: A Bootstrap margin utility that adds margin-bottom (spacing) of 4 units to give space between the title and the next form field.
+
+
+4. Form Element
+
+<form>
+
+This represents the HTML form where the user will input their login credentials (email and password).
+
+5. Email Input Field
+
+<div className="mb-3">
+  <label htmlFor="username" className="form-label">Email</label>
+  <input
+    type="email"
+    className="form-control"
+    id="email"
+    value={email}
+    onChange={handleEmailChange}
+  />
+</div>
+
+mb-3: A Bootstrap class that applies margin-bottom to create space between this field and the next one.
+
+form-label: A Bootstrap class that styles the label (in this case, "Email").
+
+type="email": Specifies that this input should accept email addresses and will automatically validate the email format (e.g., user@example.com).
+
+className="form-control": This Bootstrap class styles the input field with a standard look for form elements (including borders and padding).
+
+value={email}: The value of the email input is tied to the React state variable email, making it a controlled component. This allows React to manage the form's state.
+
+onChange={handleEmailChange}: This event handler updates the email state variable whenever the user types in the email input field.
+
+
+6. Password Input Field
+
+<div className="mb-3">
+  <label htmlFor="password" className="form-label">Password</label>
+  <input
+    type="password"
+    className="form-control"
+    id="password"
+    value={password}
+    onChange={handlePasswordChange}
+  />
+</div>
+
+mb-3: This Bootstrap class adds margin-bottom to space this field from the next one.
+
+type="password": Specifies that this input field is for passwords, meaning the text entered will be hidden.
+
+value={password}: Similar to the email input, the value of this field is tied to the password state variable, making it controlled by React.
+
+onChange={handlePasswordChange}: This event handler updates the password state variable as the user types in the password field.
+
+
+7. Login Button
+
+<div className="text-center">
+  <button type="button" className="btn btn-primary" onClick={handleLogin}>
+    Login
+  </button>
+</div>
+
+text-center: This class centers the button horizontally.
+
+btn btn-primary: These are Bootstrap classes that style the button, giving it a primary button appearance (usually blue).
+
+onClick={handleLogin}: This is the click event handler for the button. When the button is clicked, the handleLogin function is executed, which should contain the login logic (like making an API request with the email and password).
+
+
+8. Register Link
+
+<h3 className="d-flex justify-content-center align-items-center">
+  <a href="/register">Register</a>
+</h3>
+
+d-flex justify-content-center align-items-center: These Bootstrap Flexbox utility classes center the <h3> tag both horizontally and vertically.
+
+<a href="/register">Register</a>: This is a link that directs the user to the registration page (/register). If the user doesn't have an account, they can click this link to navigate to the registration form.
+
+
+React State and Handlers:
+
+For this code to work, you'll need to have React state for email and password and functions like handleEmailChange, handlePasswordChange, and handleLogin to manage the form input and login process.
+
