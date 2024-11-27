@@ -23,10 +23,11 @@ const Register: React.FC<RegisterProps> = () => {
 
     // Function to check if password and confirm password match
     const validatePasswords = () => {
-        if (password !== confirmPassword) {
+        // Only validate if confirmPassword field is not empty
+        if (confirmPassword && password !== confirmPassword) {
             setError('Passwords do not match');
         } else {
-            setError(null); // Clear error if passwords match
+            setError(null); // Clear error if passwords match or confirmPassword is empty
         }
     };
 
